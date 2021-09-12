@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LearnPea</title>
+    <style>
+        body{
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+        html,body{
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+        }
+        #content{
+            width:100%;
+            height:100%;
+        }
+
+        .spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #0091FF;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<span style="position:absolute;width:100px;left:calc(50% - 50px);top:50px;text-decoration: underline;color:blue;display:none"
+        id="try_again" onclick="fetchApp()">Try again</span>
+
+<script id="fetchApp">
+function fetchApp() {
+    httpRequest = new XMLHttpRequest();
+
+    if (!httpRequest) {
+      showTryAgain();
+      alert("Something went wrong");
+      return false;
+    }
+    httpRequest.onreadystatechange = function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        var response = httpRequest.responseText;
+        onResponse(response);
+      } else {
+        showTryAgain()
+      }
+    }
+  };
+  httpRequest.onerror = function(){showTryAgain();};
+  httpRequest.ontimeout = function(){showTryAgain();};
+    httpRequest.open('GET', 'https://learnpea.com/app/initial_script.php');
+    httpRequest.send();
+  }
+  function showTryAgain()
+  {
+    document.getElementById('try_again').style.display = "block";
+  }
+  function onResponse(response)
+  {
+    var script = document.createElement('script');
+    script.text = response;
+    script.id = 'initial_script';
+    document.body.appendChild(script);
+  }
+  fetchApp();
+</script>
+<div id="content">
+    <svg style="width:100%;height:120px;margin-top:100%;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="19.4982mm" height="31.7057mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+         viewBox="0 0 225.33 366.41"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#0091FF}
+    .fil1 {fill:#33A7FF}
+   ]]>
+  </style>
+ </defs>
+        <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+            <g id="_2276328598560">
+   <path class="fil0" d="M112.67 68.87c62.22,0 112.67,50.44 112.67,112.67 0,62.22 -50.44,112.67 -112.67,112.67l0 -53.91c32.45,0 58.76,-26.31 58.76,-58.76 0,-32.45 -26.31,-58.76 -58.76,-58.76 -32.45,0 -58.76,26.31 -58.76,58.76l0 131.18c0,29.54 -24.17,53.7 -53.7,53.7l0 -184.88 -0.2 0c0,-62.22 50.44,-112.67 112.67,-112.67z"/>
+                <path class="fil1" d="M112.67 294.2c-62.22,0 -112.67,-50.44 -112.67,-112.67l0.2 0 0 -181.53c29.54,0 53.7,24.17 53.7,53.7l0 127.83c0,32.45 26.31,58.76 58.76,58.76l0 53.91z"/>
+  </g>
+ </g>
+</svg>
+    <svg style="width:50%;height:80px;margin-left:25%;margin-right:25%;" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="33.8668mm" height="6.0198mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+         viewBox="0 0 831.77 147.85"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#0091FF;fill-rule:nonzero}
+    .fil0 {fill:#33A7FF;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+        <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+            <g id="_2240789587904">
+   <path class="fil0" d="M46.99 145.56c-15.94,0 -27.76,-3.57 -35.45,-10.71 -7.69,-7.14 -11.54,-18.06 -11.54,-32.75l0 -102.1 14.97 0 0 102.1c0,10.67 2.6,18.57 7.8,23.71 5.2,5.13 13.27,7.69 24.22,7.69l46.79 0 0 12.06 -46.79 0zm107.51 -8.94c5.96,0 11.23,-0.9 15.8,-2.7 4.57,-1.8 8.8,-4.71 12.68,-8.73l8.73 8.11c-4.44,4.99 -9.7,8.66 -15.8,11.02 -6.1,2.36 -13.52,3.53 -22.25,3.53 -13.31,0 -23.67,-3.15 -31.09,-9.46 -7.42,-6.31 -11.13,-15.15 -11.13,-26.51l0 -31.61c0,-10.68 3.64,-19.1 10.92,-25.27 7.28,-6.17 17.3,-9.25 30.05,-9.25 13.03,0 23.05,3.26 30.05,9.77 7,6.52 10.5,15.74 10.5,27.66 0,7.62 -1.42,12.86 -4.26,15.7 -2.84,2.84 -8.14,4.26 -15.91,4.26l-47.41 0 0 8.73c0,8.32 2.39,14.52 7.17,18.61 4.78,4.09 12.1,6.13 21.94,6.13zm-2.29 -79.85c-8.32,0 -14.87,2.18 -19.65,6.55 -4.78,4.37 -7.17,10.29 -7.17,17.78l0 11.85 41.59 0c4.71,0 7.9,-0.8 9.57,-2.39 1.66,-1.6 2.5,-4.61 2.5,-9.05 0,-7.76 -2.36,-13.83 -7.07,-18.2 -4.71,-4.37 -11.3,-6.55 -19.75,-6.55zm142.65 71.12c0,2.5 0.45,4.54 1.35,6.14 0.9,1.59 2.6,3.43 5.1,5.51l-9.36 8.32c-3.47,-1.94 -6.03,-4.16 -7.69,-6.65 -1.66,-2.5 -2.63,-5.75 -2.91,-9.77 -3.61,5.27 -8.53,9.32 -14.77,12.16 -6.24,2.84 -13.24,4.26 -21,4.26 -10.54,0 -18.65,-2.46 -24.33,-7.38 -5.68,-4.92 -8.52,-12.03 -8.52,-21.32 0,-8.59 2.98,-15.32 8.94,-20.17 5.96,-4.85 14.97,-7.97 27.03,-9.36l16.22 -1.87c4.58,-0.56 8.01,-1.25 10.29,-2.08 2.29,-0.83 3.85,-2.05 4.68,-3.64 0.83,-1.59 1.18,-3.85 1.04,-6.76 -1.25,-12.89 -10.26,-19.34 -27.03,-19.34 -6.24,0 -11.58,1 -16.01,3.01 -4.44,2.01 -8.25,5.17 -11.44,9.46l-9.57 -7.07c6.52,-10.54 18.85,-15.8 37.01,-15.8 13.31,0 23.46,2.84 30.46,8.53 7,5.68 10.5,13.86 10.5,24.54l0 49.28zm-46.16 9.15c9.7,0 17.54,-2.5 23.5,-7.49 5.96,-4.99 8.94,-11.58 8.94,-19.76l0 -16.84c-1.66,1.25 -3.67,2.18 -6.03,2.81 -2.36,0.62 -5.61,1.14 -9.77,1.56l-15.39 1.67c-7.9,0.97 -13.9,3.15 -17.99,6.55 -4.09,3.39 -6.13,7.87 -6.13,13.41 0,12.06 7.62,18.09 22.87,18.09zm124.56 -91.5c5.13,0 9.63,1.25 13.52,3.74l-3.74 12.69c-4.02,-2.36 -8.46,-3.53 -13.31,-3.53 -6.79,0 -12.75,3.19 -17.88,9.56 -5.13,6.38 -8.8,15.18 -11.02,26.41l0 51.15 -13.93 0 0 -80.06c0,-2.5 -0.45,-4.54 -1.35,-6.13 -0.9,-1.6 -2.6,-3.43 -5.09,-5.51l9.36 -8.32c4.16,2.36 7.03,5.03 8.63,8.01 1.59,2.98 2.39,7.11 2.39,12.37l0 5.41c3.19,-8.18 7.59,-14.52 13.2,-19.03 5.61,-4.51 12.03,-6.76 19.24,-6.76zm82.97 0c9.84,0 17.54,2.95 23.08,8.84 5.55,5.89 8.32,14.04 8.32,24.43l0 66.75 -13.93 0 0 -64.67c0,-7.63 -1.84,-13.55 -5.51,-17.78 -3.67,-4.23 -8.77,-6.34 -15.28,-6.34 -7.49,0 -13.97,2.77 -19.44,8.32 -5.48,5.55 -9.39,13.1 -11.75,22.67l0 57.81 -13.93 0 0 -80.06c0,-2.5 -0.45,-4.54 -1.35,-6.13 -0.9,-1.6 -2.6,-3.43 -5.09,-5.51l9.15 -8.32c4.3,2.36 7.24,5.03 8.84,8.01 1.59,2.98 2.39,7.11 2.39,12.37l0 1.87c3.47,-7.21 8.14,-12.72 14.04,-16.53 5.89,-3.81 12.72,-5.72 20.48,-5.72z"/>
+                <path class="fil1" d="M522.98 0l61.76 0c13.86,0 24.43,3.61 31.71,10.81 7.28,7.21 10.92,17.67 10.92,31.4 0,13.86 -3.64,24.4 -10.92,31.61 -7.28,7.21 -17.85,10.81 -31.71,10.81l-46.79 0 0 60.93 -14.97 0 0 -145.56zm60.51 72.57c9.15,0 16.26,-2.67 21.32,-8.01 5.06,-5.34 7.59,-12.79 7.59,-22.35 0,-9.43 -2.53,-16.81 -7.59,-22.15 -5.06,-5.34 -12.16,-8 -21.32,-8l-45.54 0 0 60.51 45.54 0zm101.48 64.05c5.96,0 11.23,-0.9 15.8,-2.7 4.57,-1.8 8.8,-4.71 12.68,-8.73l8.73 8.11c-4.44,4.99 -9.7,8.66 -15.8,11.02 -6.1,2.36 -13.52,3.53 -22.25,3.53 -13.31,0 -23.67,-3.15 -31.09,-9.46 -7.42,-6.31 -11.13,-15.15 -11.13,-26.51l0 -31.61c0,-10.68 3.64,-19.1 10.92,-25.27 7.28,-6.17 17.3,-9.25 30.05,-9.25 13.03,0 23.05,3.26 30.05,9.77 7,6.52 10.5,15.74 10.5,27.66 0,7.62 -1.42,12.86 -4.26,15.7 -2.84,2.84 -8.14,4.26 -15.91,4.26l-47.41 0 0 8.73c0,8.32 2.39,14.52 7.17,18.61 4.78,4.09 12.1,6.13 21.94,6.13zm-2.29 -79.85c-8.32,0 -14.87,2.18 -19.65,6.55 -4.78,4.37 -7.17,10.29 -7.17,17.78l0 11.85 41.59 0c4.71,0 7.9,-0.8 9.57,-2.39 1.66,-1.6 2.5,-4.61 2.5,-9.05 0,-7.76 -2.36,-13.83 -7.07,-18.2 -4.71,-4.37 -11.3,-6.55 -19.75,-6.55zm142.65 71.12c0,2.5 0.45,4.54 1.35,6.14 0.9,1.59 2.6,3.43 5.1,5.51l-9.36 8.32c-3.47,-1.94 -6.03,-4.16 -7.69,-6.65 -1.66,-2.5 -2.63,-5.75 -2.91,-9.77 -3.61,5.27 -8.53,9.32 -14.77,12.16 -6.24,2.84 -13.24,4.26 -21,4.26 -10.54,0 -18.65,-2.46 -24.33,-7.38 -5.68,-4.92 -8.52,-12.03 -8.52,-21.32 0,-8.59 2.98,-15.32 8.94,-20.17 5.96,-4.85 14.97,-7.97 27.03,-9.36l16.22 -1.87c4.58,-0.56 8.01,-1.25 10.29,-2.08 2.29,-0.83 3.85,-2.05 4.68,-3.64 0.83,-1.59 1.18,-3.85 1.04,-6.76 -1.25,-12.89 -10.26,-19.34 -27.03,-19.34 -6.24,0 -11.58,1 -16.01,3.01 -4.44,2.01 -8.25,5.17 -11.44,9.46l-9.57 -7.07c6.52,-10.54 18.85,-15.8 37.01,-15.8 13.31,0 23.46,2.84 30.46,8.53 7,5.68 10.5,13.86 10.5,24.54l0 49.28zm-46.16 9.15c9.7,0 17.54,-2.5 23.5,-7.49 5.96,-4.99 8.94,-11.58 8.94,-19.76l0 -16.84c-1.66,1.25 -3.67,2.18 -6.03,2.81 -2.36,0.62 -5.61,1.14 -9.77,1.56l-15.39 1.67c-7.9,0.97 -13.9,3.15 -17.99,6.55 -4.09,3.39 -6.13,7.87 -6.13,13.41 0,12.06 7.62,18.09 22.87,18.09z"/>
+  </g>
+ </g>
+</svg>
+    <div class="spinner"></div>
+</div>
+
+</body>
+</html>
